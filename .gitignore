@@ -101,7 +101,6 @@ celerybeat.pid
 
 # Environments
 .env
-.env.local
 .venv
 env/
 venv/
@@ -157,7 +156,7 @@ test/
 
 # Environment variables
 .env
-.env.local
+.env
 .env.development.local
 .env.test.local
 .env.production.local
