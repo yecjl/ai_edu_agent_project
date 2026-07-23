@@ -16,7 +16,7 @@ from config import settings
 # 这里有个**必须避开的坑**：千万**不要**把模型名写成 "deepseek/deepseek-chat" 这种带前缀的形式，那会触发框架去找另一个专用的 langchain-deepseek 包，导致出错。
 # 正确做法就是上面这样：model="deepseek-chat" + model_provider="openai" + base_url。
 llm = init_chat_model(
-    model=settings.llm_model,  # 模型名称
+    model=settings.llm_model_chat,  # 模型名称
     model_provider="openai",  # 走 OpenAI 兼容协议（关键）
     api_key=settings.llm_api_key,  # DeepSeek 的 API Key
     base_url=settings.llm_base_url,  # DeepSeek 接口地址（关键）

@@ -12,7 +12,7 @@ ENV_FILE = Path(__file__).parents[0] / ".env"
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=ENV_FILE, env_file_encoding="utf-8", extra="ignore")
-    llm_model: str = ...
+    llm_model_chat: str = ...
     llm_api_key: str = ...
     llm_base_url: str = ...
 
@@ -21,4 +21,4 @@ settings = Settings()
 
 
 if __name__ == '__main__':
-    print(settings.llm_model)
+    print(settings.llm_model_chat)

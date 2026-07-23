@@ -12,7 +12,7 @@ from langchain_core.messages import HumanMessage
 from config import settings
 
 llm = init_chat_model(
-    model=settings.llm_model,  # 模型名称
+    model=settings.llm_model_chat,  # 模型名称
     model_provider="openai",  # 走 OpenAI 兼容协议（关键）
     api_key=settings.llm_api_key,  # DeepSeek 的 API Key
     base_url=settings.llm_base_url,  # DeepSeek 接口地址（关键）
