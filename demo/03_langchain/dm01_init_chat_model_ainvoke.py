@@ -25,7 +25,9 @@ import asyncio
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import SystemMessage, HumanMessage
 
-from config import settings
+from config import get_settings
+
+settings = get_settings()
 
 # model_provider="openai" + base_url=...：这两个配合使用，意思是「用 OpenAI 的协议格式，但把请求发到 DeepSeek 的地址」。
 # 这里有个**必须避开的坑**：千万**不要**把模型名写成 "deepseek/deepseek-chat" 这种带前缀的形式，那会触发框架去找另一个专用的 langchain-deepseek 包，导致出错。

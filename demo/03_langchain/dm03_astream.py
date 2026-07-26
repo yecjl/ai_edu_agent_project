@@ -9,7 +9,9 @@ import asyncio
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import HumanMessage
 
-from config import settings
+from config import get_settings
+
+settings = get_settings()
 
 llm = init_chat_model(
     model=settings.llm_model_chat,  # 模型名称
