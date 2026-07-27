@@ -62,7 +62,7 @@ class Settings(BaseSettings):
     bge_m3_model_path: str = "./models/embedding/bge-m3"  # 嵌入模型
 
     # ── JWT 认证 ──
-    jwt_secret_key: str = ...  # 必填：签发登录令牌用的密钥
+    jwt_secret_key: str = "f8Kz9Xp2Lm7Qw4Rv1Nt6Ys8Bc3Dg0Eh5AjWkUoIxPqZyMnSrGvTbF"  # 必填：签发登录令牌用的密钥
     jwt_algorithm: str = "HS256"  # 签名算法
     jwt_access_token_expire_minutes: int = 10080  # 令牌有效期（分钟）
 
