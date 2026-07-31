@@ -5,6 +5,18 @@ LLM Factory：统一封装大模型调用，按 Agent 类型路由。
 Author: danke
 Date: 2026/7/25 15:44
 """
+# 在terminal中调用 ModuleNotFoundError: No module named 'config', 'backend'
+# 方式一: 将根目录加入 sys.path
+# import sys
+# from pathlib import Path
+# PROJECT_ROOT = Path(__file__).resolve().parents[2]  # resolve 获取绝对路径, 解析（消除）所有符号链接和 .. / . 组件
+# if str(PROJECT_ROOT) not in sys.path:
+#     sys.path.insert(0, str(PROJECT_ROOT))  # insert(0) 优先级高于 append
+# 再运行:
+# python ./backend/core/llm_factory.py
+# 方式二: 模块调用运行
+# python -m backend.core.llm_factory
+
 from typing import Type, Any                          # 类型注解用：Type 表示「某个类本身」，Any 表示任意类型
 from pydantic import BaseModel                        # 结构化输出的 Schema 都是它的子类
 import httpx                                          # HTTP 客户端库（用来自定义网络行为）

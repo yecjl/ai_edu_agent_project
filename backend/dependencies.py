@@ -37,12 +37,11 @@ async def get_db() -> AsyncGenerator[AsyncSession, None]:
 
 
 # ── JWT 鉴权 ───────────────────────────────────────────────────
-# 关闭自动拦截
-bearer_scheme = HTTPBearer(auto_error=False)   # FastAPI 安全方案：自动从请求头解析 "Authorization: Bearer <token>"
+bearer_scheme = HTTPBearer()   # FastAPI 安全方案：自动从请求头解析 "Authorization: Bearer <token>"
 
 async def get_current_user(
-    # Depends(bearer_scheme)：FastAPI 自动取出 Bearer Token；没带或格式错会直接 403, 增加auto_error=false
-    credentials: HTTPAuthorizationCredentials | None = Depends(bearer_scheme),
+    # Depends(bearer_scheme) #：FastAPI 自动取出 Bearer Token；没带或格式错会直接 403
+    credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)
 ) -> dict:
     """FastAPI 依赖：验证 JWT Token，返回当前用户信息。
     返回 {"user_id": str, "role": str, "tenant_id": str}；Token 无效则抛 401。"""
@@ -52,8 +51,6 @@ async def get_current_user(
         detail="无效的认证凭证",
         headers={"WWW-Authenticate": "Bearer"},
     )
-    if credentials is None:
-        raise credentials_exception
     try:
         # 用密钥和算法解码 Token；若签名不对/过期，会抛 JWTError
         payload = jwt.decode(
