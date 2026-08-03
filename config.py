@@ -57,9 +57,11 @@ class Settings(BaseSettings):
     # deepseek_model_coder: str = "deepseek-coder"  # 代码模型名
 
     # ── 本地模型权重路径 ──
-    reranker_model_path: str = "./models/reranker/bge-reranker-large"  # 精排模型
-    classifier_model_path: str = "./models/classifier/all-MiniLM-L6-v2"  # 意图分类模型
-    bge_m3_model_path: str = "./models/embedding/bge-m3"  # 嵌入模型
+    # reranker_model_path: str = "./models/reranker/bge-reranker-large"  # 精排模型
+    reranker_model_path: str = "/Users/yezhimeier/Study/Heima/bigdata/code/models/reranker/bge-reranker-large"  # 精排模型
+    classifier_model_path: str = "/Users/yezhimeier/Study/Heima/bigdata/code/models/classifier/all-MiniLM-L6-v2"  # 意图分类模型
+    bge_m3_model_path: str = "/Users/yezhimeier/Study/Heima/bigdata/code/models/embedding/bge-m3"  # 嵌入模型
+    finetuned_classifier_path: str = "models/classifier/query-classifier-finetuned"
 
     # ── JWT 认证 ──
     jwt_secret_key: str = "f8Kz9Xp2Lm7Qw4Rv1Nt6Ys8Bc3Dg0Eh5AjWkUoIxPqZyMnSrGvTbF"  # 必填：签发登录令牌用的密钥
