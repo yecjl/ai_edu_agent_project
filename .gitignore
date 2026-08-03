@@ -201,3 +201,6 @@ Thumbs.db
 
 # Cache directories
 .cache/.env
+
+# model
+models/
