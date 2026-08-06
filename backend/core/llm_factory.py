@@ -24,7 +24,7 @@ from langchain.chat_models import init_chat_model     # 2.3 学的：创建聊�
 from langchain_core.language_models import BaseChatModel  # 聊天模型的基类（类型注解用）
 from langchain_core.runnables import Runnable         # 「可运行对象」基类，结构化模型属于它
 
-from config import get_settings                       # 读配置（API Key、base_url 等）
+from backend.config import get_settings                       # 读配置（API Key、base_url 等）
 from backend.core.logger import get_logger            # 结构化日志
 
 logger = get_logger(__name__)                         # 本模块的日志器，name 用当前模块名

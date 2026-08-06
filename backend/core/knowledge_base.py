@@ -9,13 +9,13 @@ Date: 2026/7/31 15:44
 import hashlib
 import time
 from dataclasses import dataclass, field
-from typing import Optional, TYPE_CHECKING
+from typing import Optional
 from backend.core.logger import get_logger
 import os
 from pymilvus import MilvusClient,AnnSearchRequest,WeightedRanker
 # from backend.core.reranker import RankedDocument, BGEReranker
 
-from config import get_settings
+from backend.config import get_settings
 
 logger = get_logger(__name__)
 

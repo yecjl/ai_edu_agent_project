@@ -7,10 +7,9 @@ Date: 2026/7/31 17:19
 """
 # scripts/init_milvus.py
 # 执行：python scripts/init_milvus.py
-import os
 from pymilvus import MilvusClient, DataType
 
-from config import get_settings
+from backend.config import get_settings
 
 # from backend.config import get_settings
 

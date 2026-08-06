@@ -11,7 +11,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_core.runnables import Runnable
 from pydantic import BaseModel, Field
 
-from config import get_settings
+from backend.config import get_settings
 
 settings = get_settings()
 

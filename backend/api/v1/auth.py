@@ -19,7 +19,7 @@ from backend.core.logger import get_logger
 # ── 兼容性补丁：passlib 1.7.4 要读 bcrypt.__about__.__version__，而 bcrypt>=4 删了它 ──
 import bcrypt as _bcrypt_mod, types as _types
 
-from config import get_settings
+from backend.config import get_settings
 
 if not hasattr(_bcrypt_mod, "__about__"):
     _about = _types.SimpleNamespace(__version__=getattr(_bcrypt_mod, "__version__", "4.x"))

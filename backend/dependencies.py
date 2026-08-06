@@ -11,7 +11,7 @@ from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from jose import JWTError, jwt                       # python-jose：JWT 的编解码库
 
-from config import get_settings
+from backend.config import get_settings
 
 settings = get_settings()
 

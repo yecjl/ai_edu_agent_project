@@ -12,7 +12,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 # .env.local 在项目根目录（config.py 在 backend/ 下）
 # ENV_FILE = Path(__file__).parents[0] / ".env.local"
 # .env.local 与 config.py 同级
-ENV_FILE = Path(__file__).parent / ".env.local"
+ENV_FILE = Path(__file__).parents[1] / ".env.local"
 
 # 方式一: 如果直接加载, 不用BaseSettings, 可以这样写:
 # load_dotenv(ENV_FILE, encoding="utf-8")
@@ -73,7 +73,7 @@ class Settings(BaseSettings):
     web_search_mcp_url: str = "http://localhost:8000/mcp/web-search"
 
     # ── Web 搜索（Tavily 可选；留空则自动用免费的 DuckDuckGo）──
-    tavily_api_key: str = ""
+    tavily_api_key: str = "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"
 
     # ── 应用基础配置 ──
     app_env: str = "local"  # 运行环境标识

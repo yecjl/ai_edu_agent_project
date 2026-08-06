@@ -8,7 +8,7 @@ import torch
 from sentence_transformers import CrossEncoder
 
 from backend.core.logger import get_logger
-from config import get_settings
+from backend.config import get_settings
 
 backend_path = os.path.dirname(os.path.dirname(__file__))
 
